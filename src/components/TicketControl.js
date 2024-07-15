@@ -12,7 +12,7 @@ class TicketControl extends React.Component {
     };
   }
 
-  handleClick() {
+  handleClick = () => {
     this.setState(prevState => ({
       formVisibleOnPage: !prevState.formVisibleOnPage
     }));
@@ -27,8 +27,8 @@ class TicketControl extends React.Component {
   }
 
   render() {
-    let correntlyVisibleState = null;
-    let addTicketButton = null;
+    let currentlyVisibleState = null;
+    let buttonText = null;
     if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewTicketForm onNewTicketCreation={this.handleAddingNewTicketToList} />;
       buttonText = "Return to Ticket List";

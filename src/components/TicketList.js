@@ -8,7 +8,7 @@ function TicketList(props) {
       <hr/>
       {props.ticketList.map((ticket, index) =>
         <Ticket names={ticket.names}
-          Location={ticket.location}
+          location={ticket.location}
           issue={ticket.issue}
           key={index} />
       )}

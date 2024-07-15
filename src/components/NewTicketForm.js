@@ -10,27 +10,33 @@ function NewTicketForm(props){
       names: event.target.names.value,
       location: event.target.location.value,
       issue: event.target.issue.value,
-      id: v4()
+      id: v4(),
     });
   }
   
   return (
     <React.Fragment>
-      <form onSelect={handleNewTicketFormSubmission}>
+      <form onSubmit={handleNewTicketFormSubmission}>
         <input
           type="text"
           name="names"
           placeholder="Pair Names" />
         <input 
           type="text"
+          name='location'
+          placeholder="Location" />
+        <textarea
+          name='issue'
           placeholder="Describe your issue." />
+        <button type="submit">Help!</button>
       </form>
     </React.Fragment>
   );
 }
 
-NewTicketForm.PropTypes = {
+NewTicketForm.propTypes = {
   onNewTicketCreation: PropTypes.func
 };
+
 
 export default NewTicketForm;
