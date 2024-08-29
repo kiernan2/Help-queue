@@ -1,6 +1,9 @@
 import React from "react";
 import NewTicketForm from "./NewTicketForm";
+import EditTicketForm from "./EditTicketForm";
 import TicketList from "./TicketList";
+import TicketDetail from "./TicketDetail";
+import Ticket from "./Ticket";
 
 class TicketControl extends React.Component {
 
@@ -8,14 +11,53 @@ class TicketControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainTicketList: []
-    };
+      mainTicketList: [],
+      selectedTicket: null,
+      editing: false
+    }; 
   }
 
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
-    }));
+    if (this.state.selectedTicket != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedTicket: null,
+        editing: false
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }));
+    }
+  }
+
+  handleEditClick = () => {
+    console.log("handleEditClick reached!");
+    this.setState({editing: true});
+  }
+
+  handleDeletingTicket = (id) => {
+    const newMainTicketList = this.state.mainTicketList.filter(ticket => ticket.id !== id);
+    this.setState({
+      mainTicketList: newMainTicketList,
+      selectedTicket: null
+    })
+  }
+
+  handleEditingTicketInList = (ticketToEdit) => {
+    const editingMainTicketList = this.state.mainTicketList
+      .filter(ticket => ticket.id !== this.state.selectedTicket.id)
+      .concat(ticketToEdit);
+    this.setState({
+      mainTicketList: editingMainTicketList,
+      editing: false,
+      selectedTicket: null
+    });
+  }
+
+  handleChangingSelectedTicket = (id) => {
+    const selectedTicket = this.state.mainTicketList.filter(ticket => ticket.id === id)[0];
+    this.setState({selectedTicket: selectedTicket});
   }
 
   handleAddingNewTicketToList = (newTicket) => {
@@ -26,16 +68,42 @@ class TicketControl extends React.Component {
     });
   }
 
+  handleAddingNewTicketInList = (ticketToEdit) => {
+    const editingMainTicketList = this.state.mainTicketList
+      .filter(ticket => ticket.id !== this.state.selectedTicket.id)
+      .concat(ticketToEdit);
+    this.setState({
+      mainTicketList: editingMainTicketList,
+      editing: false,
+      selectedTicket: null
+    });
+  }
+
   render() {
-    let currentlyVisibleState = null;
+    let currentlyVisibleState = <TicketDetail 
+      ticket = {this.state.selectedTicket} 
+      onClickingDelete = {this.handleDeletingTicket} 
+      onClickingEdit = {this.handleEditClick} 
+    />;
     let buttonText = null;
-    if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewTicketForm onNewTicketCreation={this.handleAddingNewTicketToList} />;
+
+    if (this.state.editing) {
+      currentlyVisibleState = <EditTicketForm ticket = {this.state.selectedTicket} onEditTicket = {this.handleEditingTicketInList} />;
       buttonText = "Return to Ticket List";
-    } else {
-      currentlyVisibleState = <TicketList ticketList={this.state.mainTicketList} />;
+    } 
+    else if (this.state.selectedTicket != null) {
+      currentlyVisibleState = <TicketDetail ticket = {this.state.selectedTicket} onClickingDelete = {this.handleDeletingTicket} onClickingEdit = {this.handleEditClick} />;
+      buttonText = "Return to Ticket List";
+    } 
+    else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewTicketForm onNewTicketCreation = {this.handleAddingNewTicketToList} />;
+      buttonText = "Return to Ticket List";
+    }
+    else {
+      currentlyVisibleState = <TicketList ticketList = {this.state.mainTicketList} onTicketSelection={this.handleChangingSelectedTicket}/>;
       buttonText = "Add Ticket";
     }
+
     return (
       <React.Fragment>
         {currentlyVisibleState}
