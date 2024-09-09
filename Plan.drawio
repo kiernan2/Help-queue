@@ -1,41 +1,38 @@
 <mxfile host="65bd71144e">
     <diagram id="w1g4MPtFDhZBwdmwwcgC" name="Page-1">
-        <mxGraphModel dx="743" dy="490" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1286" dy="619" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="App" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" vertex="1" parent="1">
+                <mxCell id="2" value="App" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" parent="1" vertex="1">
                     <mxGeometry x="120" y="80" width="600" height="620" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="Header" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="150" y="120" width="550" height="60" as="geometry"/>
+                <mxCell id="3" value="Header" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="120" width="560" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="TicketControl" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
-                    <mxGeometry x="150" y="200" width="550" height="400" as="geometry"/>
+                <mxCell id="4" value="TicketControl" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="200" width="560" height="400" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="TicketList" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
-                    <mxGeometry x="170" y="230" width="250" height="250" as="geometry"/>
+                <mxCell id="12" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #4ec9b0;&quot;&gt;EditTicketForm&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="370" width="120" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="NewTicketForm" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
-                    <mxGeometry x="440" y="230" width="240" height="350" as="geometry"/>
+                <mxCell id="13" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #4ec9b0;&quot;&gt;TicketDetail&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="370" width="120" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="Submit" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#18141D;" vertex="1" parent="1">
-                    <mxGeometry x="460" y="490" width="200" height="70" as="geometry"/>
+                <mxCell id="14" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #4ec9b0;&quot;&gt;NewTicketForm&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="370" width="120" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="Add Ticket" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#18141D;" vertex="1" parent="1">
-                    <mxGeometry x="170" y="490" width="250" height="70" as="geometry"/>
+                <mxCell id="15" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #4ec9b0;&quot;&gt;TicketList&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="370" width="120" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="Ticket" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#18141D;" vertex="1" parent="1">
-                    <mxGeometry x="195" y="270" width="200" height="40" as="geometry"/>
+                <mxCell id="16" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #4ec9b0;&quot;&gt;ReusableForm&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="415" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="Ticket" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#18141D;" vertex="1" parent="1">
-                    <mxGeometry x="195" y="320" width="200" height="40" as="geometry"/>
+                <mxCell id="17" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #4ec9b0;&quot;&gt;ReusableForm&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=0" vertex="1" parent="1">
+                    <mxGeometry x="170" y="415" width="120" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="Ticket" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#18141D;" vertex="1" parent="1">
-                    <mxGeometry x="195" y="370" width="200" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="12" value="Ticket" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=#18141D;" vertex="1" parent="1">
-                    <mxGeometry x="195" y="420" width="200" height="40" as="geometry"/>
+                <mxCell id="21" value="&lt;div style=&quot;color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #4ec9b0;&quot;&gt;Ticket&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="415" width="120" height="40" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
