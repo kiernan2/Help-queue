@@ -1,7 +1,6 @@
 import React from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
-import Ticket from "./Ticket";
 
 function EditTicketForm(props) {
   const { ticket } = props;

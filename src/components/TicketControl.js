@@ -3,7 +3,6 @@ import NewTicketForm from "./NewTicketForm";
 import EditTicketForm from "./EditTicketForm";
 import TicketList from "./TicketList";
 import TicketDetail from "./TicketDetail";
-import Ticket from "./Ticket";
 
 class TicketControl extends React.Component {
 
