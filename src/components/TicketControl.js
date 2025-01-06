@@ -80,19 +80,7 @@ class TicketControl extends React.Component {
     dispatch(action2);
   }
 
-  handleAddingNewTicketToList = (newTicket) => {
-    const { dispatch } = this.props;
-    const { id, names, location, issue } = newTicket;
-    const action = {
-      type: 'ADD_TICKET',
-      id: id,
-      names: names,
-      location: location,
-      issue: issue,
-    }
-    dispatch(action);
-    // this.setState({formVisibleOnPage: false});
-  }
+// ^^ WTF is this ^^
 
   render() {
     let currentlyVisibleState = <TicketDetail 
@@ -101,7 +89,7 @@ class TicketControl extends React.Component {
       onClickingEdit = {this.handleEditClick} 
     />;
 
-    let buttonText = null;
+    let buttonText = "Add Ticket";
 
     if (this.state.editing) {
       currentlyVisibleState = <EditTicketForm ticket = {this.state.selectedTicket} onEditTicket = {this.handleEditingTicketInList} />;
@@ -116,7 +104,7 @@ class TicketControl extends React.Component {
       buttonText = "Return to Ticket List";
     }
     else {
-      currentlyVisibleState = <TicketList ticketList = {this.state.mainTicketList} onTicketSelection={this.handleChangingSelectedTicket}/>;
+      currentlyVisibleState = <TicketList ticketList = {this.props.mainTicketList} onTicketSelection={this.handleChangingSelectedTicket}/>;
       buttonText = "Add Ticket";
     }
 
@@ -131,7 +119,7 @@ class TicketControl extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    mainTicketList: state,
+    mainTicketList: state.mainTicketList,
     formVisibleOnPage: state.formVisibleOnPage
   }
 }
