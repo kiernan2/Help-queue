@@ -80,7 +80,6 @@ class TicketControl extends React.Component {
     dispatch(action2);
   }
 
-// ^^ WTF is this ^^
 
   render() {
     let currentlyVisibleState = <TicketDetail 
