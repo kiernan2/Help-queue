@@ -4,6 +4,7 @@ import EditTicketForm from "./EditTicketForm";
 import PropTypes from "prop-types";
 import TicketList from "./TicketList";
 import TicketDetail from "./TicketDetail";
+import * as a from './../actions';
 import { connect } from 'react-redux';
 import { type } from "@testing-library/user-event/dist/type";
 
@@ -25,9 +26,7 @@ class TicketControl extends React.Component {
       });
     } else {
       const { dispatch } = this.props;
-      const action = {
-        type: 'TOGGLE_FORM'
-      }
+      const action = a.toggleForm();
       dispatch(action);
     }
   }
@@ -37,25 +36,12 @@ class TicketControl extends React.Component {
     this.setState({editing: true});
   }
 
+  
   handleDeletingTicket = (id) => {
-    const { dispatch } = this.props
-    const action = {
-      type: 'DELETE_TICKET',
-      issue: id
-    }
+    const { dispatch } = this.props;
+    const action = a.deleteTicket(id);
     dispatch(action);
     this.setState({selectedTicket: null});
-  }
-
-  handleEditingTicketInList = (ticketToEdit) => {
-    const editingMainTicketList = this.state.mainTicketList
-      .filter(ticket => ticket.id !== this.state.selectedTicket.id)
-      .concat(ticketToEdit);
-    this.setState({
-      mainTicketList: editingMainTicketList,
-      editing: false,
-      selectedTicket: null
-    });
   }
 
   handleChangingSelectedTicket = (id) => {
@@ -65,22 +51,21 @@ class TicketControl extends React.Component {
 
   handleAddingNewTicketToList = (newTicket) => {
     const { dispatch } = this.props;
-    const { id, names, location, issue } = newTicket;
-    const action = {
-      type: 'ADD_TICKET',
-      id: id,
-      names: names,
-      location: location,
-      issue: issue,
-    }
+    const action = a.addTicket(newTicket);
     dispatch(action);
-    const action2 = {
-      type: 'TOGGLE_FORM'
-    }
+    const action2 = a.toggleForm();
     dispatch(action2);
   }
 
-// ^^ WTF is this ^^
+  handleEditingTicketInList = (ticketToEdit) => {
+    const { dispatch } = this.props;
+    const action = a.addTicket(ticketToEdit);
+    dispatch(action);
+    this.setState({
+      editing: false,
+      selectedTicket: null
+    });
+  }
 
   render() {
     let currentlyVisibleState = <TicketDetail 
