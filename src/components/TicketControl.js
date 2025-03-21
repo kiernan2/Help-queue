@@ -57,7 +57,6 @@ class TicketControl extends React.Component {
     dispatch(action2);
   }
 
-<<<<<<< HEAD
   handleEditingTicketInList = (ticketToEdit) => {
     const { dispatch } = this.props;
     const action = a.addTicket(ticketToEdit);
@@ -67,8 +66,6 @@ class TicketControl extends React.Component {
       selectedTicket: null
     });
   }
-=======
->>>>>>> ba73f20a0b1e3719c683a22e28ef3e677455ff7d
 
   render() {
     let currentlyVisibleState = <TicketDetail 
