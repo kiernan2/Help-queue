@@ -1,4 +1,5 @@
 {
+  "homepage": "https://kiernan2.github.io/Help-queue/",
   "name": "help-queue",
   "version": "1.0.0",
   "private": true,
@@ -9,6 +10,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "date-fns": "^2.30.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^8.0.2",
@@ -18,11 +20,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "webpack --mode=development",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

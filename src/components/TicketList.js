@@ -1,6 +1,7 @@
 import React from "react";
 import Ticket from "./Ticket";
 import PropTypes from "prop-types";
+import { formatDistanceToNow } from "date-fns";
 
 function TicketList(props) {
   return (
@@ -12,6 +13,7 @@ function TicketList(props) {
           names={ticket.names}
           Location={ticket.location}
           issue={ticket.issue}
+          formattedWaitTime={ticket.formattedWaitTime}
           id={ticket.id}
           key={ticket.id} />
       )}
